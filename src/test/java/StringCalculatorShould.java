@@ -15,4 +15,10 @@ public class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(4, stringCalculator.add("4"));
     }
+
+    @Test
+    public void return_3_when_input_is_1_2() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(3, stringCalculator.add("1,2"));
+    }
 }
