@@ -9,4 +9,10 @@ public class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(0, stringCalculator.add(""));
     }
+
+    @Test
+    public void return_4_when_input_is_4() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(4, stringCalculator.add("4"));
+    }
 }
