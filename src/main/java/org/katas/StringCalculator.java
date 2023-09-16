@@ -12,7 +12,7 @@ public class StringCalculator {
             return Integer.parseInt(numbers);
         }
 
-        String[] numbersArray = numbers.split("[,\n]");
+        String[] numbersArray = numbers.split("[," + System.lineSeparator() + "]");
         int sum = 0;
         for (String number : numbersArray) {
             sum += Integer.parseInt(number);
