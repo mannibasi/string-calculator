@@ -1,6 +1,7 @@
 package org.katas;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class StringCalculator {
     public int add(String numbers) {
@@ -13,10 +14,8 @@ public class StringCalculator {
         }
 
         String[] numbersArray = numbers.split("[," + System.lineSeparator() + "]");
-        int sum = 0;
-        for (String number : numbersArray) {
-            sum += Integer.parseInt(number);
-        }
-        return sum;
+        return Arrays.stream(numbersArray)
+                .mapToInt(Integer::parseInt)
+                .sum();
     }
 }
