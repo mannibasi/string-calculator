@@ -42,7 +42,6 @@ public class StringCalculatorTests {
     }
 
     @Test
-    @Disabled
     public void return_3_when_input_is_1_2_with_custom_delimiter() {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(3, stringCalculator.add("//;\n1;2"));
