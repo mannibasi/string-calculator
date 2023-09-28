@@ -16,10 +16,6 @@ public class StringCalculator {
             return 0;
         }
 
-        if (numbers.length() == 1) {
-            return Integer.parseInt(numbers);
-        }
-
         if (numbers.startsWith(CUSTOM_DELIMITER_MARKER)) {
             setDelimiters(numbers.substring(CUSTOM_DELIMITER_MARKER.length(), numbers.indexOf("\n")));
             return add(numbers.substring(numbers.indexOf("\n") + 1));
