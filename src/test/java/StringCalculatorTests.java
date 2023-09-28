@@ -61,6 +61,12 @@ public class StringCalculatorTests {
     }
 
     @Test
+    public void return_7_when_input_is_1_2_3_with_custom_delimiters_of_arbitrary_length() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(7, stringCalculator.add("//***\n1***2***4"));
+    }
+
+    @Test
     public void throws_negatives_not_allowed_exception_when_input_is_1_minus_2_3() {
         StringCalculator stringCalculator = new StringCalculator();
         Exception ex = assertThrows(NegativesNotAllowedException.class, () -> stringCalculator.add("1,-2,3"));
