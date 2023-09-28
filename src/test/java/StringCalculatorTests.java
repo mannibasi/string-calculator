@@ -80,4 +80,10 @@ public class StringCalculatorTests {
         Exception ex = assertThrows(NegativesNotAllowedException.class, () -> stringCalculator.add("-1"));
         assertEquals("Negatives not allowed: -1", ex.getMessage());
     }
+
+    @Test
+    public void ignore_numbers_greater_than_1000_and_return_2_when_input_is_2_1001() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(2, stringCalculator.add("2,1001"));
+    }
 }
