@@ -32,7 +32,8 @@ public class StringCalculator {
                 .filter(number -> number < 0).toArray();
 
         if (negativeNumbersArray.length > 0) {
-            throw new NegativesNotAllowedException("Negatives not allowed: " + negativeNumbersArray[0]);
+            String negativeNumbers = Arrays.toString(negativeNumbersArray).replace("[", "").replace("]", "");
+            throw new NegativesNotAllowedException("Negatives not allowed: " + negativeNumbers);
         }
 
         return Arrays.stream(numbersArray)
