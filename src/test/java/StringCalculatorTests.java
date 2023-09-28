@@ -73,4 +73,11 @@ public class StringCalculatorTests {
         Exception ex = assertThrows(NegativesNotAllowedException.class, () -> stringCalculator.add("1,-2,3,-4"));
         assertEquals("Negatives not allowed: -2, -4", ex.getMessage());
     }
+
+    @Test
+    public void throws_negatives_not_allowed_exception_when_input_is_minus_1() {
+        StringCalculator stringCalculator = new StringCalculator();
+        Exception ex = assertThrows(NegativesNotAllowedException.class, () -> stringCalculator.add("-1"));
+        assertEquals("Negatives not allowed: -1", ex.getMessage());
+    }
 }
