@@ -26,6 +26,15 @@ public class StringCalculator {
         }
 
         String[] numbersArray = numbers.split(this.delimiters);
+
+        int[] negativeNumbersArray = Arrays.stream(numbersArray)
+                .mapToInt(Integer::parseInt)
+                .filter(number -> number < 0).toArray();
+
+        if (negativeNumbersArray.length > 0) {
+            throw new NegativesNotAllowedException("Negatives not allowed: " + negativeNumbersArray[0]);
+        }
+
         return Arrays.stream(numbersArray)
                 .mapToInt(Integer::parseInt)
                 .sum();
