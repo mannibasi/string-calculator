@@ -34,6 +34,7 @@ public class StringCalculator {
 
         return Arrays.stream(numbersArray)
                 .mapToInt(Integer::parseInt)
+                .filter(number -> number <= 1000)
                 .sum();
     }
 }
