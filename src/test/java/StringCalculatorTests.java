@@ -1,8 +1,9 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.katas.NegativesNotAllowedException;
 import org.katas.StringCalculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StringCalculatorTests {
     @Test
@@ -45,5 +46,17 @@ public class StringCalculatorTests {
     public void return_3_when_input_is_1_2_with_custom_delimiter() {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(3, stringCalculator.add("//;\n1;2"));
+    }
+
+    @Test
+    public void return_6_when_input_is_1_2_3_with_custom_delimiter() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//;\n1;2;3"));
+    }
+
+    @Test
+    public void return_7_when_input_is_1_2_3_with_custom_delimiter() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(7, stringCalculator.add("//@@\n1@@2@@4"));
     }
 }
