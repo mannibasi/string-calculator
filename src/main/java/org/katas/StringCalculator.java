@@ -5,11 +5,19 @@ import java.util.Arrays;
 public class StringCalculator {
     private static final String CUSTOM_DELIMITER_MARKER = "//";
 
+    private String delimiters = "[,\n]";
+
     public void setDelimiters(String delimiters) {
-        this.delimiters = delimiters;
+        if(isSpecialCharacter(delimiters)) {
+            this.delimiters = delimiters.replace("*", "\\*");
+        } else {
+            this.delimiters = delimiters;
+        }
     }
 
-    private String delimiters = "[,\n]";
+    private boolean isSpecialCharacter(String delimiters) {
+        return delimiters.contains("*");
+    }
 
     public int add(String numbers) {
         if (numbers.isEmpty()) {
